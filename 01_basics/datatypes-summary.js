@@ -59,4 +59,5 @@ Return type of variables in JavaScript
        Arrays  =>  object
        Function  =>  function
        Object  =>  object
+Remember the notes well
 */
