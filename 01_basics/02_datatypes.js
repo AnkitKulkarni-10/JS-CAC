@@ -1,5 +1,5 @@
 "use strict" //treat all JS code as newer version
-/*alert(3+3) we are suing node.js here and not the browser (document model) */
+/*alert(3+3) we are using node.js here and not the browser (document model) */
 /*
 Data types:
 Boolean. true and false.
@@ -14,4 +14,4 @@ let name = "Ankit"
 let age = 21
 let state; //undefined
 let isLOggedIn = null
-console.log(typeof null)
+console.log(typeof null)//Object
