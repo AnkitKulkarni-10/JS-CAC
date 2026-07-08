@@ -25,7 +25,7 @@ Representation of negative indexes:
 -9 -8 -7 -6 -5 -4 -3 -2 -1
 */
 console.log(yourName.slice (2)); //tesh-hc i.e 2 chya pudhche sagle
-console.log(yourName.slice (-3)); //tesh-hc i.e -3 dharun pudhche sagle
+console.log(yourName.slice (-3)); //-hc i.e -3 dharun pudhche sagle
 //Trim() method. Types -> trimStart() and trimEnd()
 const newStringOne = "   hitesh   "
 console.log(newStringOne);
