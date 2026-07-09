@@ -41,7 +41,37 @@ function loginUserMessage(username){ //Can aslo write function loginUserMessage(
 console.log(loginUserMessage()); //hitesh just logged in!
 //When you dont pass anything here, -> undefined just logged in
 
+//Functions with arrays and objects:
+//In e-commerce websites there is a 'shopping cart' where user can keep on adding many items. The exact no of items is not known to us,
+//in that case Rest/Spread operators are used
+function calculateCartPrice(...num1){ //function calculateCartPrice(value1, value2,...num1) -> In this case:[ 4000 ]
+    return num1
+}
+console.log(calculateCartPrice(200,300,4000)); //[ 200, 300, 4000 ] -> Return array of the numbers passed as the arguments
+//Passing an object to a function
+const user = {
+    username : "hitesh",
+    price : 500
+}
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+    
+}
+//handleObject(user)
+//Another method:
+handleObject({
+    username: "Sam",
+    price: 500
+})
 
+//Passing Arrays to a function
+const myArray = [200, 300, 400 , 500]
+function handleArray(array){
+    console.log(`The second element of the object is: ${array[2]}`);    
+}
+//handleArray(myArray)
+//Another method
+handleArray([100,200,3,4,6])
 
 
 
