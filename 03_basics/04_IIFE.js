@@ -18,3 +18,15 @@ or functions (global scope pollution). Means IIFE keeps variables and functions 
     console.log(`DB CONNECTED TWO ${name}`);
     
 }) ('Hitesh');
+
+//IIFE vs Normal function
+/**
+ * KEY DIFFERENCES BETWEEN NORMAL FUNCTIONS & IIFEs
+ * 
+ * | Feature         | Normal Function                               | IIFE (Immediately Invoked Function Expression) |
+ * | :-------------- | :-------------------------------------------- | :--------------------------------------------- |
+ * | **Invocation**  | Called manually using its name.              | Runs instantly upon declaration.              |
+ * | **Naming**      | Usually named.                                | Typically anonymous.                           |
+ * | **Reusability** | Can be executed multiple times.               | Runs exactly once.                            |
+ * | **Global Scope**| Adds a function name to the global namespace. | Keeps the global scope completely clean.       |
+ */
