@@ -49,8 +49,43 @@ Every element, attribute, and text is considered a "node" in this tree.
 </head>
 <body>
     <div class="bg-black">
-    <h1 id="title" class = "heading">DOM learning</h1>
+    <h1 id="title" class = "heading">DOM learning on Chai aur Code <span style="display: none;">test text</span></h1>
+    <h2>Lorem ipsum dolor sit.</h2>
+    <h2>Lorem ipsum dolor sit amet.</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur.</h2>
     <p>Lorem ipsum dolor sit amet.</p>
+    <ul>
+        <li class = "list-item">one</li>
+        <li class = "list-item">two</li>
+        <li class = "list-item">three</li>
+    </ul>
     </div>
 </body>
 </html>
+<!-- Video number 32 Notes
+DOM Manipulation & Properties
+Content Accessors:
+innerText (12:10): Returns only visible text.
+textContent (11:53): Returns all text, including hidden content (e.g., from display: none).
+innerHTML (12:03): Returns the full HTML structure inside the element. Use with caution due to security (XSS risks).
+Attributes: Use getAttribute() and setAttribute() (6:34) to interact with non-standard or standard HTML attributes.
+Styles: You can directly modify element styles via element.style.property (9:17).
+Remember that camelCase is used for CSS properties (e.g., backgroundColor instead of background-color).
+
+Selecting DOM Elements:
+Interviews often test your knowledge of different selection methods and their return types:
+
+getElementById (4:14): Returns a single Element object. It is highly performant,
+and the most direct way to target an element by its ID.
+querySelector (16:21): A versatile, modern method that accepts CSS selectors (e.g., #id, .class).
+It returns only the first matching element.
+querySelectorAll (23:13): Returns a NodeList. Unlike getElementsByClassName, this allows for modern array-like iteration.
+getElementsByClassName (30:48): Returns an HTMLCollection. It is a "live" collection,
+meaning it updates automatically if the DOM changes, but it lacks array methods like forEach.
+
+Difference: NodeList vs. HTMLCollection
+This is a classic interview question. Understanding how to iterate over them is key:
+
+NodeList: Obtained via querySelectorAll. It supports forEach out of the box.
+HTMLCollection: Obtained via getElementsByClassName or getElementsByTagName. It does not support forEach. 
+You must convert it to an array using Array.from() (33:04) before you can use methods like map or forEach. -->
