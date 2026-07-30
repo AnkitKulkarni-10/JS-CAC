@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove elements in DOM</title>
+</head>
+<body
+style = "background-color: rgb(56, 55, 55); color: white;">
+    
+</body>
+<ul class="language">
+    <li>Javascript</li>
+</ul>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerText = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("C++")
+    //OPtimized method to add list item in the Ul:
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName)) //Important
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptiLanguage("GoLang")
+    
+    //Editing elements:
+    const secondLang = document.querySelector('li:nth-child(2)')
+    //secondLang.innerHTML = "Mojo" -> Direct method to replace the "Text content only"
+    const newLi = document.createElement('li')
+    newLi.appendChild(document.createTextNode("Mojo"))// newLI.textContent = "Mojo"
+    secondLang.replaceWith(newLi) //Here the entire list element is replaced
+
+    //Another method to edit
+    const otherLang = document.querySelector('li:nth-child(1)') //First list element targeted
+    otherLang.outerHTML = '<li>Typescript</li>'
+
+    //Remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+    
+</script>
+</html>
