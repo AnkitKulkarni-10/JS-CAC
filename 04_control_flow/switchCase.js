@@ -6,7 +6,7 @@
 //     default:
 //         break;
 // }
-// Note: If the break statement is not used here, after the match, the entire code gets executed "Except the default condition"
+// Note: If the break statement is not used here, after the match, the entire code gets executed.
 /*
 const month = 3
 switch (month){
