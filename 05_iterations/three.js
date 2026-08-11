@@ -11,8 +11,8 @@ for (const greet of greetings) {
    
 }
 
-//Map in JS
-// The Map object holds key-value pairs and remembers the original insertion order of the keys.
+//Map Object in JS
+// The Map object holds key-value pairs and remembers the "original insertion order" of the keys.
 // Any value (both objects and primitive values) may be used as either a key or a value.
 const map = new Map()
 map.set('IN', 'India')
