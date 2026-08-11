@@ -9,12 +9,12 @@ const values = coding.forEach( (item)=> {
 Use forEach() when you want to do something with every item (like saving to a database, updating the DOM, or logging),
 but you do not need to create a new array. */
 
-//filter() method: filter() creates a new array containing only elements that pass a "specific condition"
+//filter() method: filter() creates a 'new array' containing only elements that pass a "specific condition"
 
 const myNums = [1,2,3,4,5,6,7,8,9,10]
 // const newNums = myNums.filter( (num) => num > 4 ) ->Implicit return
 const newNums = myNums.filter( (num) => {
-    return num > 4; //Explicit return
+    return num > 4; //Explicit return (Have to return after opening a scope)
 } )
 //console.log(newNums);
 
@@ -43,7 +43,7 @@ const books = [
   let userBooks = books.filter( (bk) => bk.genre === 'History')
 
   userBooks = books.filter( (bk) => { 
-    return bk.publish >= 1995 && bk.genre === "History"
+    return bk.publish >= 1985 && bk.genre === "Fiction"
 })
   console.log(userBooks);
 
