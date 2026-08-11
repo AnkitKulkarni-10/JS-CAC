@@ -5,7 +5,7 @@ langs.forEach( function (item) {
     
 } )
 langs.forEach ( (item, index , langs) => {
-    //console.log(item, index , langs);
+    //console.log(item, index , langs); // elements, index , complete array
     
 }  )
 //Other method is to write a function and then pass it to the forEach loop as REFERENCE
@@ -38,6 +38,7 @@ const coding = [
 
 ]
 coding.forEach( (item) => {
-    console.log(item.languageFileName);
+    //console.log(item.languageFileName);
+    console.log(item.languageName);
     
 } )
