@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events Basics</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+        <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+<script>
+//This method works but provides less features (like propagation) than using eventListeners:
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert('Owl');
+    // }
+
+//attachEvent() method -> Deprecated 
+
+//Important events to lean: type, timestamp , preventDefault , target , toElement , srcElement
+//Interview q's: clientX, clientY , screenX , screenY
+//altkey, ctrlkey , shiftkey , keyCode
+
+/*Best approach: false is default
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log(e);
+        
+    }, false)
+*/    
+
+//Event Propagation in Js: (Imp)
+/*Event Bubbling:
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log('clicked inside the ul');
+        
+    }, false)
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('Owl clicked');
+        e.stopPropagation(); // "prevents further propagation of the current event" in the capturing and bubbling phases.
+    //We can only see: Owl clicked
+    }, false) */
+/*Now here when we click on any image other than owl: Clicked on ul
+When we click on owl: Owl clicked and then clicked inside ul.
+So we can say: "The event bubbles up from the innnermost element to the outermost element"
+*/
+/*Event Capturing
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log('clicked inside the ul');
+        
+    }, true)
+    document.getElementById('owl').addEventListener('click', function(e){
+        console.log('Owl clicked');
+        
+    }, true)
+In event Capturing the opposite happens: Event moves from outermost to the innermost element */
+
+//preventDefault() method:
+/*
+document.getElementById('google').addEventListener('click', function(e){
+    e.preventDefault(); //Prevents the default event (Opening google in this case)
+    e.stopPropagation();      
+    console.log('Google clicked'); 
+})
+*/
+//Small mini project to remove all the images (i.e entire list element) when clicked on them
+document.querySelector('#images').addEventListener('click', function(e){
+    //console.log(e.target.parentNode);
+    console.log(e.target.tagName); //Gives which tag is clicked
+    if(e.target.tagName === 'IMG') //Check to prevent the entire ul to get removed when clicked on anything other than img
+    {
+        console.log(e.target.id);//Id of the image which is removed
+        let removeIt = e.target.parentNode
+        removeIt.remove() // To remove one li at a time when clicked.
+    }
+
+    
+})
+
+
+
+
+
+</script>
+</html>
