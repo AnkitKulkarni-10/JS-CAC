@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and web APIs</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+//The setTimeout() method of the Window interface sets a timer which executes a function or specified piece of code once the timer expires.
+    const sayHitesh = function (){
+        console.log('Hitesh');
+        
+    }
+    //setTimeout(sayHitesh,2000) //Give the "reference" of the function, DO NOT EXECUTE it.
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = 'Best JS Course';    
+    }
+    const changeMe = setTimeout(changeText, 2000) //This will change the h1 from Chai aur code to -> Best JS Course "after 2 seconds"
+//Note: Holding this in a constant does not stop the process of setTimeout(), it will execute as expected after the interval.
+
+//The clearTimeout() method of the Window interface cancels a timeout previously established by calling Window.setTimeout().
+//This method requires a callBack, now applying an event to the button:
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe);
+    alert('Stopped!')   
+}) //Stops the heading from getting changed after clicking the stop button
+
+
+</script>
+</html>
