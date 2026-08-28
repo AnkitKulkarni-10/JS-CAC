@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind in JS</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            this.library = 'React';
+            this.server = 'https://localhost:300';
+
+            //Special requirement:
+            document.querySelector('button')
+            .addEventListener('click',this.handleClick.bind(this))
+        }
+        handleClick (){
+            console.log('Button CLicked');
+            console.log(this.server); //Not accessible wihtout bind() 
+            
+        }
+    }
+    const app = new React()              
+</script>
+</html>
+<!-- 
+bind() creates a new function with its this value permanently set to the object we provide.
+"In simple terms:
+
+Without the bind method, an event listener only has access to the context (or this) of the 'element that triggers the event' 
+(like a button in this case). So, in your example, the handleClick event listener only has the button's context 
+(this refers to the button itself).
+
+Using the bind method, we can set the this context to a different object, 
+allowing us to access the context where the event listener was created, not just the button's context." -->
+
+<!-- 
+WITHOUT bind()
+
+Button clicked
+      ↓
+handleClick runs
+      ↓
+this → button
+      ↓
+this.server → undefined 
+
+WITH bind(this)
+
+React object
+     │
+     └── bind(handleClick, React object)
+                      ↓
+                 Button clicked
+                      ↓
+                 handleClick runs
+                      ↓
+                 this → React object
+                      ↓
+                 this.server → "https://localhost:300"
+-->
